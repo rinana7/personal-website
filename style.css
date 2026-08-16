@@ -9,21 +9,21 @@ body {
     padding: 0;
     font-family: "Sageo UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #222222;
-    background-color: #faead7;
+    background-color: #f8f1e3;
 }
 
 header {
     position: fixed;
     width: 100%;
     height: 70px;
-    background-color: #f2ebe6;
+    background-color: #fbf8f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 main {
-    margin: 350px 250px 10px;
+    margin: 350px 300px 10px;
 }
 
 button {
