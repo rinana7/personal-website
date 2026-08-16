@@ -23,7 +23,7 @@ header {
 }
 
 main {
-    margin: 200px 250px 10px;
+    margin: 350px 250px 10px;
 }
 
 button {
@@ -54,12 +54,14 @@ footer {
 
 section {
     min-height: 300px;
+    margin-bottom: 300px;
 }
 
 h1 {
-    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding: 0;
-    font-size: 60px;
+    font-size: 80px;
     font-family: Times, Times New Roman, serif;
 }
 
