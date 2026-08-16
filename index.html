@@ -26,8 +26,8 @@
                 <p>15 year old student</p>
                 <h1 class="name">Rina Sakai</h1>
                 <h4>Student and coder</h4>
-                <button type="button"><> See my code</button>
-                <button type="button">More about me</button>
+                <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">See my code</button> 
+                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">More about me</button> 
                 <img src="" alt="Drawing of a programmer coding at a desk with a coffee mug and a lamp nearby">
             </section>
             <section id="about">
@@ -46,7 +46,7 @@
         </main>
         <footer>
             <p>&copy; 2026 Rina's Website</p>
-            <button>GitHub</button>
+            <button onclick="window.location.href='https://github.com/rinana7';">GitHub</button>
             <button>Email</button>
         </footer>
     </body>
