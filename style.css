@@ -33,6 +33,7 @@ button {
     font-weight: 500;
     border: 1px solid #aba6a6;
     border-radius: 25px;
+    letter-spacing: -0.5px;
 }
 
 footer {
