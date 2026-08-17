@@ -84,9 +84,9 @@ footer {
 }
 
 .petal-board {
+    height: 400px;
+    width: 600px;
     position:relative;
-    width: 500px;
-    height: 300px;
     background-image: url("wet-concrete.jpg");
     background-size: cover;
     overflow: hidden;
@@ -102,6 +102,13 @@ footer {
 
 .petal:active {
     cursor: grabbing;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 section {
