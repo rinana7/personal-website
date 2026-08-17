@@ -1,5 +1,4 @@
 const board = document.getElementById("petalBoard");
-const petalImage = "sakura.png"
 
 const positions = [
     {x: 80, y:60, rotation: -20},
@@ -13,7 +12,7 @@ const positions = [
 positions.forEach((position) => {
     const petal = document.createElement("img");
 
-    petal.src = petalImage;
+    petal.src = "petal.png";
     petal.className = "petal";
 
     petal.style.left =`${position.x}px`;
@@ -22,24 +21,22 @@ positions.forEach((position) => {
     board.appendChild(petal);
 })
 
-let selectedPetal = null;
-let offsetX = 0;
-let offsetY = 0;
-
 board.addEventListener("pointerdown", (event) =>{
-    if (!event.target.classList.contains(".petal")) return;
+    if (!event.target.classList.contains("petal")) return;
     selectedPetal = event.target;
-    const rect = selectedPetal.getBoundingClientRect();
-    offsetX = event.clientX - rect.left;
-    offsetY = event.clientY - rect.top;
+
+    const petalRect = selectedPetal.getBoundingClientRect();
+    offsetX = event.clientX - petalRect.left;
+    offsetY = event.clientY - petalRect.top;
     selectedPetal.setPointerCapture(event.pointerId);
 });
 
 board.addEventListener("pointermove", (event) => {
     if(!selectedPetal) return;
     const boardRect = board.getBoundingClientRect();
-    let x = event.clientX - rect.left; - offsetX;
-    let y = event.clientY - rect.top; - offsetY;
+
+    let x = event.clientX - boardRect.left - offsetX;
+    let y = event.clientY - boardRect.top - offsetY;
 
     selectedPetal.style.left = `${x}px`;
     selectedPetal.style.top = `${y}px`;
