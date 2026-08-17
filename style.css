@@ -94,7 +94,7 @@ footer {
 
 .petal {
     position:absolute;
-    width: 50px;
+    width: 40px;
     height: auto;
     cursor: grab;
     user-select: none;

@@ -1,12 +1,19 @@
 const board = document.getElementById("petalBoard");
 
 const positions = [
-    {x: 80, y:60, rotation: -20},
-    {x: 450, y:180, rotation: -35},
-    {x: 100, y:60, rotation: 20},
-    {x: 220, y:100, rotation: 15},
-    {x: 300, y:240, rotation: 70},
-    {x: 200, y:350, rotation: 25},
+    { x: 100, y: 100, rotation: -45 },
+    { x: 130, y: 75,  rotation: -30 },
+    { x: 165, y: 65,  rotation: -15 },
+    { x: 200, y: 70,  rotation: 5 },
+    { x: 240, y: 70,  rotation: -5 },
+    { x: 275, y: 65,  rotation: 15 },
+    { x: 310, y: 75,  rotation: 30 },
+    { x: 340, y: 100, rotation: 45 },
+    { x: 185, y: 100, rotation: 35 },
+    { x: 220, y: 100, rotation: -35 },
+    { x: 350, y: 135, rotation: 60 },
+    { x: 335, y: 170, rotation: 70 },
+    { x: 320, y: 205, rotation: 55 },
 ];
 
 positions.forEach((position) => {
