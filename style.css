@@ -83,6 +83,27 @@ footer {
     gap: 10px;
 }
 
+.petal-board {
+    position:relative;
+    width: 700px;
+    height: 450px;
+    background-image: url("");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.petal {
+    position:absolute;
+    width: 50px;
+    height: auto;
+    cursor: grab;
+    user-select: none;
+}
+
+.petal:active {
+    cursor: grabbing;
+}
+
 section {
     min-height: 300px;
     margin-bottom: 300px;
