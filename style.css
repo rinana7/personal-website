@@ -23,7 +23,7 @@ header {
 }
 
 main {
-    margin: 350px 300px 10px;
+    margin: 250px 200px 10px;
 }
 
 button {
@@ -49,7 +49,7 @@ footer {
 }
 
 .logo {
-    margin-left: 250px;
+    margin-left: 200px;
     font-family: Gill Sans, sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
@@ -85,9 +85,9 @@ footer {
 
 .petal-board {
     position:relative;
-    width: 700px;
-    height: 450px;
-    background-image: url("");
+    width: 500px;
+    height: 300px;
+    background-image: url("wet-concrete.jpg");
     background-size: cover;
     overflow: hidden;
 }
