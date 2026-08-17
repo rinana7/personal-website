@@ -13,7 +13,6 @@
             <nav class="links">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#time">Time</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -27,21 +26,36 @@
                 <h1>Rina Sakai</h1>
                 <h4>Student and coder</h4>
                 <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" class="coding">< > See my code</button> 
-                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">More about me</button> 
-                <img src="" alt="Drawing of a programmer coding at a desk with a coffee mug and a lamp nearby">
+                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">More about me</button>     
+                <div>
+                    <div class="petal-board" id="petalBoard">
+                        <img src="sakura.png" class="petal">
+                    </div>
+                    <img src="" alt="Drawing of a programmer coding at a desk with a coffee can and a mascot nearby">
+                </div>
             </section>
+
             <section id="about">
                 <h2>About Me</h2>
-                <h5>Hi! My name is Rina, a 15 year old and I live in Hawaii. I like to do front end coding and I've been coding for 8 years! It all started from scratch, to replit, and to vs code where I put all my imaginations.</h5>
+                <h5>Hi! My name is Rina, a 15 year old and I live in Hawaii. I like to do front end coding and I've been coding for 8 years! I'm currently in Math team as well as a sophmore.</h5>
+                <div class="display">
+                    <div>
+                        <h5>languages I mostly use:</h5>
+                        <ul>
+                            <li>Python</li>
+                            <li>CSS, HTML, JS</li>
+                        </ul>
+                    </div>
+                    <img src="" alt="rock paper scissors game">
+                    <img src="" alt="A framwork of a os called sakura os">
+                    <img src="" alt="LED light up with breadboard">
+                </div>
                 <p class="intro"><span style="color: rgb(184, 236, 232);">●</span> currently exploring UI designing and hardware engineering</p>
-            </section>
-            <section id="time">
-                <h2>Tracked coding time</h2>
-                <p>time spent coding today:</p>
             </section>
             <section id="projects">
                 <h2>Coding projects</h2>
                 <p>small things I've built so far</p>
+                <div id="github-repos">Loading repositiores...</div>
             </section>
         </main>
         <footer id="contact">

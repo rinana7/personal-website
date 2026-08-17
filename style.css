@@ -78,6 +78,11 @@ footer {
     margin-right: 300px;
 }
 
+.display {
+    display: flex;
+    gap: 10px;
+}
+
 section {
     min-height: 300px;
     margin-bottom: 300px;
