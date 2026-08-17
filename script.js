@@ -23,3 +23,30 @@ positions.forEach((position, index) => {
 
     borad.appendChild(petal);
 })
+
+let selectedPetal = null;
+let offsetX = 0;
+let offsetY = 0;
+
+borad.addEventListener("pointerdown", (event) =>{
+    if (!event.target.classList.contains("draggable-petal")) return;
+    selectedPetal = event.target;
+    const rect = selectedPetal.getBoundingClientRect();
+    offsetX = event.clientX - rect.left;
+    offsetY = event.clientY - rect.top;
+    selectedPetal.setPointerCapture(event.pointerId);
+});
+
+borad.addEventListener("pointermove", (event) => {
+    if(!selectedPetal) return;
+    const boardRect = board.getBoundingClientRect();
+    let x = event.clientX - rect.left; - offsetX;
+    let y = event.clientY - rect.top; - offsetY;
+
+    selectedPetal.style.left = `${x}px`;
+    selectedPetal.style.top = `${y}px`;
+});
+
+board.addEventListener("pointerup", () => {
+    selectedPetal = null;
+})
