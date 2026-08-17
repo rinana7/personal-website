@@ -1,5 +1,5 @@
-const borad = document.getElementById("petalBoard");
-const petalTemplate = borad.querySelector(".sakura");
+const board = document.getElementById("petalBoard");
+const petalImage = "sakura.png"
 
 const positions = [
     {x: 80, y:60, rotation: -20},
@@ -10,26 +10,24 @@ const positions = [
     {x: 200, y:350, rotation: 25},
 ];
 
-positions.forEach((position, index) => {
-    const petal = index === 0
-        ? petalTemplate
-        : petalTemplate.cloneNode(true);
+positions.forEach((position) => {
+    const petal = document.createElement("img");
+
+    petal.src = petalImage;
+    petal.className = "petal";
 
     petal.style.left =`${position.x}px`;
     petal.style.top =`${position.y}py`;
     petal.style.transform =`rotate(${position.rotation}deg)`;
-
-    petal.classList.add("draggable-petal");
-
-    borad.appendChild(petal);
+    board.appendChild(petal);
 })
 
 let selectedPetal = null;
 let offsetX = 0;
 let offsetY = 0;
 
-borad.addEventListener("pointerdown", (event) =>{
-    if (!event.target.classList.contains("draggable-petal")) return;
+board.addEventListener("pointerdown", (event) =>{
+    if (!event.target.classList.contains(".petal")) return;
     selectedPetal = event.target;
     const rect = selectedPetal.getBoundingClientRect();
     offsetX = event.clientX - rect.left;
@@ -37,7 +35,7 @@ borad.addEventListener("pointerdown", (event) =>{
     selectedPetal.setPointerCapture(event.pointerId);
 });
 
-borad.addEventListener("pointermove", (event) => {
+board.addEventListener("pointermove", (event) => {
     if(!selectedPetal) return;
     const boardRect = board.getBoundingClientRect();
     let x = event.clientX - rect.left; - offsetX;
