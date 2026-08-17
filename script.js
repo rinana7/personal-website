@@ -1,4 +1,7 @@
 const board = document.getElementById("petalBoard");
+const homeimage = document.getElementById("homeImage");
+const petalSwitch = document.getElementById("petalSwitch");
+const imageSwitch = document.getElementById("imageSwitch");
 
 const positions = [
     { x: 100, y: 100, rotation: -45 },
@@ -51,4 +54,14 @@ board.addEventListener("pointermove", (event) => {
 
 board.addEventListener("pointerup", () => {
     selectedPetal = null;
-})
+});
+
+imageSwitch.addEventListener("click", () => {
+    board.style.display = "none";
+    homeimage.style.display = "block";
+});
+
+petalSwitch.addEventListener("click", () => {
+    homeimage.style.display = "none";
+    board.style.display = "block";
+});

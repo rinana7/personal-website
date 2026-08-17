@@ -125,6 +125,12 @@ footer {
     border-radius: 12px;
 }
 
+.switch-buttons{
+    margin-top: 5px;
+    padding: 0;
+    gap: 2px;
+}
+
 section {
     min-height: 300px;
     margin-bottom: 300px;

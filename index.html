@@ -30,11 +30,15 @@
                     <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">More about me</button> 
                 </div>    
                 <div>
-                    <div class="petal-board" id="petalBoard" style="display: block;">
+                    <div class="petal-board" id="petalBoard" style="display: none;">
                         <img src="petal.png" class="petal">
                     </div>
-                    <div class="home-image" style="display: none;">
+                    <div class="home-image" id="homeImage" style="display: block;">
                         <img src="coder.jpg" alt="Drawing of a programmer coding at a desk with a coffee can and a mascot nearby">
+                    </div>
+                    <div class="switch-buttons">
+                        <button id="imageSwitch">Image</button>
+                        <button id="petalSwitch">Petal Board</button>
                     </div>
                 </div>
             </section>
