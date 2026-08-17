@@ -36,6 +36,11 @@ button {
     letter-spacing: -0.5px;
 }
 
+button:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #edcece;
+}
+
 footer {
     display: flex;
     margin-left: 300px;
@@ -44,7 +49,7 @@ footer {
 }
 
 .logo {
-    margin-left: 50px;
+    margin-left: 250px;
     font-family: Gill Sans, sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
@@ -67,6 +72,10 @@ footer {
     width: 40%;
     border-radius: 15px;
     border: 1px solid #d1c6c6;
+}
+
+.links {
+    margin-right: 300px;
 }
 
 section {
@@ -129,7 +138,7 @@ nav ul {
 
 nav a{
     text-decoration: none;
-    color: #CAC7BE;
+    color: #75736f;
     font-weight: 500;
     font-size: 1rem;
     transition: color 0.2s ease-in-out;
