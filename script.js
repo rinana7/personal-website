@@ -116,6 +116,14 @@ mascot.addEventListener("click", () => {
     if (clickCount === 2) {
         leftEye.textContent = "O";
         rightEye.textContent = "O";
+        const suprise = document.createElement("span");
+        suprise.textContent = "!!";
+        suprise.classList.add("mascot-suprise");
+        mascot.appendChild(suprise);
+
+        setTimeout(() => {
+        suprise.remove();
+        }, 500);
     } else {
         leftEye.textContent = "^";
         rightEye.textContent = "^";
