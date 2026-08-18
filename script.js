@@ -72,25 +72,37 @@ petalSwitch.addEventListener("click", () => {
 
 
 document.addEventListener("mousemove", (event)=>{
-    const rect = mascot.getBoundingClientRect();
+    const mascotRect = mascot.getBoundingClientRect();
 
-    const centerX = rect.left + rect.width/2;
-    const centerY = rect.top + rect.height/2;
+    const eyes = [
+        {
+            element: leftEye,
+            x: mascotRect.left + 75,
+            y: mascotRect.top + 70
+        },
+        {
+            element: rightEye,
+            x: mascotRect.left + 75,
+            y: mascotRect.top + 70
+        }
+    ];
 
-    const dx = event.clientX - centerX;
-    const dy = event.clientY - centerY;
+    eyes.forEach((eye) => {
+        const dx = event.clientX - eye.x;
+        const dy = event.clientY - eye.y;
 
-    const angle = Math.atan2(dy, dx);
-    const distance = Math.min(6, Math.hypot(dx,dy)/100);
+        const angle = Math.atan2(dy, dx);
 
-    const moveX = Math.cos(angle)*distance;
-    const moveY = Math.sin(angle)*distance;
+        const distance = Math.min(
+            5,
+            Math.hypot(dx, dy) / 100
+        );
 
-    leftEye.style.transform =
-        `translate(${moveX}px, ${moveY}px)`;
+        const moveX = Math.cos(angle) * distance;
+        const moveY = Math.sin(angle) * distance;
 
-    rightEye.style.transform =
-        `translate(${moveX}px, ${moveY}px)`;
+        eye.element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
 });
 
 
