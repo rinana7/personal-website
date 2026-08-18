@@ -3,6 +3,10 @@ const homeimage = document.getElementById("homeImage");
 const petalSwitch = document.getElementById("petalSwitch");
 const imageSwitch = document.getElementById("imageSwitch");
 
+const mascot = document.getElementById("mascot");
+const leftEye = document.getElementById("left-eye");
+const rightEye = document.getElementById("right-eye");
+
 const positions = [
     { x: 100, y: 100, rotation: -45 },
     { x: 130, y: 75,  rotation: -30 },
@@ -65,3 +69,47 @@ petalSwitch.addEventListener("click", () => {
     homeimage.style.display = "none";
     board.style.display = "block";
 });
+
+
+document.addEventListener("mousemove", (event)=>{
+    const rect = mascot.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width/2;
+    const centerY = rect.top + rect.height/2;
+
+    const dx = event.clientX - centerX;
+    const dy = event.clientY - centerY;
+
+    const angle = Math.atan2(dy, dx);
+    const distance = Math.min(6, Math.hypot(dx,dy)/100);
+
+    const moveX = Math.cos(angle)*distance;
+    const moveY = Math.sin(angle)*distance;
+
+    leftEye.style.transform =
+        `translate(${moveX}px, ${moveY}px)`;
+
+    rightEye.style.transform =
+        `translate(${moveX}px, ${moveY}px)`;
+});
+
+
+function blink() {
+    leftEye.textContent = "-"
+    rightEye.textContent = "-"
+
+    setTimeout(() => {
+        leftEye.textContent = "•";
+        rightEye.textContent = "•";
+    }, 150);
+};
+
+function scheduleBlink() {
+    const delay = 2000 + Math.random() *4000;
+    setTimeout(() => {
+        blink();
+        scheduleBlink();
+    }, delay);
+}
+
+scheduleBlink();
