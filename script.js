@@ -120,7 +120,17 @@ mascot.addEventListener("click", () => {
         leftEye.textContent = "^";
         rightEye.textContent = "^";
         mascot.classList.add("happy");
+
+        const heart = document.createElement("span");
+        heart.textContent = "❤️";
+        heart.classList.add("mascot-heart");
+        mascot.appendChild(heart);
+
+        setTimeout(() => {
+        heart.remove();
+        }, 500);
     }
+
     faceTimer = setTimeout(() => {
         leftEye.textContent = "•";
         rightEye.textContent = "•";
