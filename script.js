@@ -7,6 +7,10 @@ const mascot = document.getElementById("mascot");
 const leftEye = document.getElementById("left-eye");
 const rightEye = document.getElementById("right-eye");
 
+let clickCount = 0;
+let clickTimer;
+let faceTimer; 
+
 const positions = [
     { x: 100, y: 100, rotation: -45 },
     { x: 130, y: 75,  rotation: -30 },
@@ -106,17 +110,26 @@ document.addEventListener("mousemove", (event)=>{
 });
 
 mascot.addEventListener("click", () => {
-    leftEye.textContent = "^";
-    rightEye.textContent = "^";
-
-    mascot.classList.add("happy");
-
-    setTimeout(() => {
+    clickCount++;
+    clearTimeout(clickTimer);
+    clearTimeout(faceTimer);
+    if (clickCount === 2) {
+        leftEye.textContent = "O";
+        rightEye.textContent = "O";
+    } else {
+        leftEye.textContent = "^";
+        rightEye.textContent = "^";
+        mascot.classList.add("happy");
+    }
+    faceTimer = setTimeout(() => {
         leftEye.textContent = "•";
         rightEye.textContent = "•";
-
         mascot.classList.remove("happy");
     }, 800);
+
+    clickTimer = setTimeout(() => {
+        clickCount = 0;
+    }, 500);
 });
 
 
