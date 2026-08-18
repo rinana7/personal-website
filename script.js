@@ -22,7 +22,7 @@ const positions = [
 positions.forEach((position) => {
     const petal = document.createElement("img");
 
-    petal.src = "petal.png";
+    petal.src = "assets/petal.png";
     petal.className = "petal";
 
     petal.style.left =`${position.x}px`;

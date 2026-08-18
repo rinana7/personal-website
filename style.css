@@ -87,7 +87,7 @@ footer {
     height: 400px;
     width: 560px;
     position:relative;
-    background-image: url("wet-concrete.jpg");
+    background-image: url("assets/wet-concrete.jpg");
     background-size: cover;
     overflow: hidden;
     border-radius: 12px;
