@@ -105,6 +105,20 @@ document.addEventListener("mousemove", (event)=>{
     });
 });
 
+mascot.addEventListener("click", () => {
+    leftEye.textContent = "^";
+    rightEye.textContent = "^";
+
+    mascot.classList.add("happy");
+
+    setTimeout(() => {
+        leftEye.textContent = "•";
+        rightEye.textContent = "•";
+
+        mascot.classList.remove("happy");
+    }, 800);
+});
+
 
 function blink() {
     leftEye.textContent = "-"
