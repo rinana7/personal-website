@@ -30,7 +30,7 @@ positions.forEach((position) => {
     petal.className = "petal";
 
     petal.style.left =`${position.x}px`;
-    petal.style.top =`${position.y}py`;
+    petal.style.top =`${position.y}px`;
     petal.style.transform =`rotate(${position.rotation}deg)`;
     board.appendChild(petal);
 })
