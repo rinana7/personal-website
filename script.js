@@ -7,6 +7,13 @@ const mascot = document.getElementById("mascot");
 const leftEye = document.getElementById("left-eye");
 const rightEye = document.getElementById("right-eye");
 
+const drawingTrack = document.getElementById("drawingTrack");
+const nextDrawing = document.getElementById("nextDrawing");
+const prevDrawing = document.getElementById("prevDrawing");
+
+let drawingPosition =0;
+const drawingWidth = 290;
+
 let clickCount = 0;
 let clickTimer;
 let faceTimer; 
@@ -150,6 +157,23 @@ mascot.addEventListener("click", () => {
     }, 500);
 });
 
+
+nextDrawing.addEventListener("click", () => {
+    const maxPosition = drawingTrack.children.length -3;
+    if (drawingPosition < maxPosition) {
+        drawingPosition++;
+        drawingTrack.style.transform = `translateX(-${drawingPosition * drawingWidth}px)`;
+    }
+})
+
+prevDrawing.addEventListener("click", () => {
+    if (drawingPosition > 0) {
+        drawingPosition--;
+
+        drawingTrack.style.transform =
+            `translateX(-${drawingPosition * drawingWidth}px)`;
+    }
+});
 
 function blink() {
     leftEye.textContent = "-"
